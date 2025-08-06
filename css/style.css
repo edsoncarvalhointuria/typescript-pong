@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Press Start 2P", system-ui;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+
+canvas {
+    border: 2px solid white;
+    background-color: #111;
+
+    &#winner {
+        position: absolute;
+        display: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &.game-over {
+            background-color: #000;
+        }
+    }
+}
+.game-container {
+    position: relative;
+}
+#pontos-jogador,
+#pontos-oponente {
+    position: absolute;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.273);
+    transform: translateX(-50%);
+}
+
+.estado-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    gap: 1.5rem;
+
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s linear, opacity 0.5s ease;
+
+    &:has(> .remove) {
+        transition: opacity 0.5s ease, visibility 0s linear 0.3s;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &:has(> .winner) {
+        backdrop-filter: none;
+    }
+
+    & .estado {
+        font-size: 24px;
+        text-shadow: 2px 0 0 crimson, 0 2px 0 crimson;
+
+        &.game-over {
+            filter: grayscale(100%);
+        }
+    }
+
+    & #restart {
+        padding: 1rem;
+        border: 5px white solid;
+        border-radius: 2rem;
+        background-color: transparent;
+        font-family: "Share Tech Mono", monospace;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+        display: none;
+
+        &:hover {
+            cursor: pointer;
+            background-color: white;
+            color: #111;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pong</title>
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="https://unpkg.com/tone"></script>
+    </head>
+    <body>
+        <div class="estado-container">
+            <p id="estado-jogo" class="estado">Clique para começar</p>
+            <button id="restart">Começar jogo novamente?</button>
+        </div>
+        <main class="game-container">
+            <div id="pontos-jogador"></div>
+            <div id="pontos-oponente"></div>
+            <canvas id="pong"></canvas>
+            <canvas id="winner"></canvas>
+        </main>
+        <script type="module" src="./js/script.js" defer></script>
+    </body>
+</html>
