@@ -1,5 +1,7 @@
 # 🏓 Pong com TypeScript Puro
 
+![Adobe Express - 0806 (1)](https://github.com/user-attachments/assets/334454da-438b-4766-b5f5-519ef62ff91b)
+
 ---
 
 ### ✨ Sobre
